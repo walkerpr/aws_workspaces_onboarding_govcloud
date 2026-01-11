@@ -3,8 +3,9 @@ $PATH = Get-Location | Select -ExpandProperty Path
 $ADUsers = Import-csv $PATH\users\users.csv
 $DIRECTORYID = aws ssm get-parameter --name  /workspaces/directory/id --query Parameter.Value --with-decryption --output=text
 $PASSWORD = aws ssm get-parameter --name   /workspaces/directory/temporary/password --query Parameter.Value --with-decryption --output=text
+$BUNDLEId = aws ssm get-parameter --name   /workspaces/bundle/id --query Parameter.Value --with-decryption --output=text
+
 $KMSarn = aws kms describe-key --key-id "alias/aws/workspaces" --query KeyMetadata.Arn --output=text
-$BUNDLEId = "<REPLACE WITH WORKSPACE BUNDLE ID>"
 
 
 foreach ($User in $ADUsers)
