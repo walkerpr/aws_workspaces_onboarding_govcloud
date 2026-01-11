@@ -1,0 +1,1 @@
+New-PSDrive -Persist -Name "SharedWork" -PSProvider "FileSystem" -Root "C:\Users\Public\Documents" -Scope Global
