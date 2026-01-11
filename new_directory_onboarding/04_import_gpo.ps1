@@ -10,10 +10,10 @@ Import-GPO -BackupGpoName 'Certificates' -TargetName 'Certificates' -path "$PATH
 
 Import-GPO -BackupGpoName 'PackagesInstallation' -TargetName 'PackagesInstallation' -path "$PATH\gpo\packages"
 
-New-GPLink -Name 'AWS Workspaces' -Target "OU=directory,DC=directory,DC=dev,DC=sample,DC=sample,DC=sample,DC=mil"
+New-GPLink -Name 'AWS Workspaces' -Target "OU=directory,DC=directory,DC=dev"
 
-New-GPLink -Name 'Certificates' -Target "OU=directory,DC=directory,DC=dev,DC=sample,DC=sample,DC=sample,DC=mil"
+New-GPLink -Name 'Certificates' -Target "OU=directory,DC=directory,DC=dev"
 
-New-GPLink -Name 'PackagesInstallation' -Target "OU=directory,DC=directory,DC=dev,DC=sample,DC=sample,DC=sample,DC=mil"
+New-GPLink -Name 'PackagesInstallation' -Target "OU=directory,DC=directory,DC=dev"
 
 gpupdate /force
