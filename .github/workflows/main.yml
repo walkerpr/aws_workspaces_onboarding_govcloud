@@ -1,0 +1,19 @@
+name: powershell-lint
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main", "stable", "release/v*"]
+jobs:
+  build:
+    name: PowerShell Lint # Naming the build is important to use it as a status check
+    runs-on: windows-latest
+    steps:
+      - name: 'Checkout GitHub Action'
+        uses: actions/checkout@v4
+      - name: Run PSScriptAnalyzer
+        uses: microsoft/psscriptanalyzer-action@v1.0
+        with:
+          path: .\
+          recurse: true
+          fix: false
