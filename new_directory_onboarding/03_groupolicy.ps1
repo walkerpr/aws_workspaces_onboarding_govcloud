@@ -1,6 +1,8 @@
+if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
+
 $FQDN = Get-ADDomainController | Select-Object -ExpandProperty Domain
 $DOMAIN_DIR = "\\$FQDN\SYSVOL\$FQDN\Policies"
-echo $FQDN
+Write-Object $FQDN
 
 New-Item -ItemType Directory -Path  $DOMAIN_DIR\Packages
 New-Item -ItemType Directory -Path  $DOMAIN_DIR\PolicyDefinitions

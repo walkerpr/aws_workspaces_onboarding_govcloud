@@ -1,4 +1,4 @@
-$PATH = Get-Location | Select -ExpandProperty Path
+$PATH = Get-Location | Select-Object -ExpandProperty Path
 
 $ADUsers = Import-csv $PATH\users\users.csv
 $DIRECTORYID = aws ssm get-parameter --name  /workspaces/directory/id --query Parameter.Value --with-decryption --output=text

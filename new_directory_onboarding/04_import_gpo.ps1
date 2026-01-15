@@ -1,4 +1,4 @@
-$PATH = Get-Location | Select -ExpandProperty Path
+$PATH = Get-Location | Select-Object -ExpandProperty Path
 
 New-GPO -Name 'AWS Workspaces'
 New-GPO -Name 'Certificates'
