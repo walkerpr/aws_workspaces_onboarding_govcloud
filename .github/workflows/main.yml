@@ -17,3 +17,4 @@ jobs:
           path: .\
           recurse: true
           fix: false
+          includeDefaultRules: true
