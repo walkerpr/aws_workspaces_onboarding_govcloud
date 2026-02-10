@@ -1,5 +1,5 @@
-# README #
-- [README](#readme)
+# AWS WorkSpaces - Onboarding #
+- [AWS WorkSpaces - Onboarding](#aws-workspaces---onboarding)
 - [Prerequisities](#prerequisities)
 - [Onboarding new users to AD and creating their AWS WorkSpace](#onboarding-new-users-to-ad-and-creating-their-aws-workspace)
 - [Offboarding users to AD and deleting their AWS WorkSpace](#offboarding-users-to-ad-and-deleting-their-aws-workspace)
